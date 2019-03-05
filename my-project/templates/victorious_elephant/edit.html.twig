@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit VictoriousElephant{% endblock %}
+
+{% block body %}
+    <h1>Edit VictoriousElephant</h1>
+
+    {{ include('victorious_elephant/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('victorious_elephant_index') }}">back to list</a>
+
+    {{ include('victorious_elephant/_delete_form.html.twig') }}
+{% endblock %}

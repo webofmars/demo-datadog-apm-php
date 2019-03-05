@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}VictoriousElephant index{% endblock %}
+
+{% block body %}
+    <h1>VictoriousElephant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TrumpSize</th>
+                <th>Color</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for victorious_elephant in victorious_elephants %}
+            <tr>
+                <td>{{ victorious_elephant.id }}</td>
+                <td>{{ victorious_elephant.trumpSize }}</td>
+                <td>{{ victorious_elephant.color }}</td>
+                <td>
+                    <a href="{{ path('victorious_elephant_show', {'id': victorious_elephant.id}) }}">show</a>
+                    <a href="{{ path('victorious_elephant_edit', {'id': victorious_elephant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('victorious_elephant_new') }}">Create new</a>
+{% endblock %}
